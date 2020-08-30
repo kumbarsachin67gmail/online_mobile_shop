@@ -180,7 +180,8 @@ exports.signin = (req, res) => {
             });
         }
 
-        if (user.role !== 'admin') {
+        if (user.role !== 'admin') 
+        {
             return res.status(400).json({
                 error: 'Admin resource. Access denied.'
             });
