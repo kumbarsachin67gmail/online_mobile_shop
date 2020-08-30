@@ -28,7 +28,8 @@ const Routes = () =>
                         <ProductPrivate exact path="/product" component={ProductList}/>
                         <Route path="/signup" exact component={Signup} />
                         <ProductPrivate path="/cart" component={Cart}/>
-                        <ProductPrivate path="/details" component={Details}/>
+                        {/* <ProductPrivate path="/details" component={Details}/> */}
+                        <Route path="/details" component={Details}/>
                         <Route path="/signin" exact component={Signin} />
                         <Route path="/auth/activate/:token" exact component={Activate} />
                         <PrivateRoute path="/private" exact component={Private}/>
