@@ -21,7 +21,7 @@ const Private = ({ history }) => {
         loadProfile();
     }, []);
 
-    axios.defaults.baseURL=process.env.REACT_APP_API;
+
     const loadProfile = () => {
         axios({
             method: 'GET',
@@ -57,7 +57,7 @@ const Private = ({ history }) => {
         setValues({ ...values, buttonText: 'Submitting' });
         axios({
             method: 'PUT',
-            url:'/user/update',
+            url:'http://localhost:8000/api/user/update',
             
             headers: {
                 Authorization: `Bearer ${token}`
