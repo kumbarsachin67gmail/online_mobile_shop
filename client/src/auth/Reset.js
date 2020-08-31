@@ -37,7 +37,7 @@ const Reset = ({match}) => {
     //     setValues({...values,[name]: event.target.value});
     // }
 
-    axios.defaults.baseURL=process.env.REACT_APP_API;
+
     const clickSubmit = (event) => {
         event.preventDefault()
         setValues({...values, buttonText:'Submitting'})

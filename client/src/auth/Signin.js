@@ -23,13 +23,13 @@ const Signin = ({history}) => {
         setValues({...values,[name]: event.target.value});
     }
 
-    axios.defaults.baseURL=process.env.REACT_APP_API;
+    
 
     const clickSubmit = (event) => {
         event.preventDefault()
         setValues({...values, buttonText:'Submitting'})
 
-
+          
 
         axios({
             method: 'POST',
@@ -47,7 +47,7 @@ const Signin = ({history}) => {
         })
             
         }).catch(error => {
-            console.log('SIGNIN ERROR',error.response.data);
+            // console.log('SIGNIN ERROR',error.response.data);
             setValues({...values, buttonText:'Submit'});
             toast.error(error.response.data.error );
         });

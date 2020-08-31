@@ -16,15 +16,16 @@ const Private = ({ history }) => {
     });
 
     const token = getCookie('token');
-
+    
     useEffect(() => {
         loadProfile();
     }, []);
 
+    axios.defaults.baseURL=process.env.REACT_APP_API;
     const loadProfile = () => {
         axios({
             method: 'GET',
-            url: `http://localhost:8000/api/user/${isAuth()._id}`,
+            url: `/user/${isAuth()._id}`,
             headers: {
                 Authorization: `Bearer ${token}`
             }

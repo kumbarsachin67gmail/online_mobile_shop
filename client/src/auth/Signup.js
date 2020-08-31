@@ -22,7 +22,7 @@ const Signup = () => {
         //
         setValues({...values,[name]: event.target.value});
     }
-    axios.defaults.baseURL=process.env.REACT_APP_API;
+    // axios.defaults.baseURL=process.env.REACT_APP_API;
     const clickSubmit = (event) => {
         event.preventDefault()
         setValues({...values, buttonText:'Submitting'})
@@ -34,11 +34,11 @@ const Signup = () => {
         .then(response => {
             console.log('SIGNUP SUCESS', response);
             setValues({...values, name:'',email:'',password:'',cpassword:'',buttonText:'Submitted'});
-            toast.success(response.data.message );
+                toast.success(response.data.message );
         }).catch(error => {
             console.log('SIGNUP ERROR',error.response.data);
             setValues({...values, buttonText:'Submit'});
-            toast.error(error.response.data.error );
+            toast.error(error.response.data.error);
         });
     };
 

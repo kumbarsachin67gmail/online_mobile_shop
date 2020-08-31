@@ -16,7 +16,7 @@ const Admin = ({ history }) => {
     });
 
     const token = getCookie('token');
-
+    axios.defaults.baseURL=process.env.REACT_APP_API;
     useEffect(() => {
         loadProfile();
     }, []);

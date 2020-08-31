@@ -4,7 +4,8 @@ import { isAuth } from "./auth/helpers";
 import "./App";
 import {ButtonContainer} from './components/Button';
 import { Link } from "react-router-dom";
-
+import axios from 'axios';
+axios.defaults.baseURL=process.env.REACT_APP_API;
 const App = () => {
   return (
     
