@@ -57,7 +57,7 @@ const Private = ({ history }) => {
         setValues({ ...values, buttonText: 'Submitting' });
         axios({
             method: 'PUT',
-            url:'http://localhost:8000/api/user/update',
+            url:'/user/update',
             
             headers: {
                 Authorization: `Bearer ${token}`
