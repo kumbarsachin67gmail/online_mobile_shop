@@ -26,9 +26,9 @@ const userRoutes = require('./routes/user');
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 // app.use(cors()); // allows all origins
-if ((process.env.NODE_ENV = 'development')) {
-    app.use(cors({ origin: `http://localhost:3000` }));
-}
+// if ((process.env.NODE_ENV = 'development')) {
+//     app.use(cors({ origin: `http://localhost:3000` }));
+// }
 //production
 if(process.env.NODE_ENV=="production"){
     app.use(express.static('client/build'))
