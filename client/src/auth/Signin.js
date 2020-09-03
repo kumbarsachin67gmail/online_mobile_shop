@@ -10,9 +10,9 @@ require('dotenv').config();
 
 const Signin = ({history}) => {
     const [values, setValues] = useState({
-        email:'kumbarsachin67@gmail.com',
-        password:'Sachin1@',
-        cpassword:'Sachin1@',
+        email:'',
+        password:'',
+        cpassword:'',
         buttonText:'Submit'
     });
 
@@ -35,7 +35,7 @@ const Signin = ({history}) => {
             method: 'POST',
             // url: 'http://localhost:8000/api/signin',
             url: "/signin",
-            data:{email, password, cpassword}
+            data:{email, password}
         })
         .then(response => {
             console.log('SIGNIN SUCESS', response);
@@ -64,11 +64,6 @@ const Signin = ({history}) => {
             <div className="form-group">
                 <label className="text-muted">Password</label>
                 <input onChange={handleChange('password')} type="password" value={password}  className="form-control letterspace"/>
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Confirm Password</label>
-                <input onChange={handleChange('cpassword')} type="password" value={cpassword}  className="form-control letterspace"/>
             </div>
 
             <div>

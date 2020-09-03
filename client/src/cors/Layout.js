@@ -14,7 +14,10 @@ const Layout = ({ children, match, history }) => {
     }
   };
   const nav = () => (
-    <ul className="nav bg-secondary p-3">
+
+    <nav className="">
+      
+      <ul className="nav bg-secondary p-3">
       <li className="nav-item">
         <Link to="/" className="nav-link text-title" style={isActive("/")}>
           <img src={logo} alt="store" className="navbar-brand" />
@@ -42,7 +45,7 @@ const Layout = ({ children, match, history }) => {
           </li>
         </Fragment>
       )}
-      {isAuth() && isAuth().role === "admin" && (
+      {/* {isAuth() && isAuth().role === "admin" && (
         <Fragment>
           <li className="nav-item">
             <Link
@@ -63,7 +66,7 @@ const Layout = ({ children, match, history }) => {
             </Link>
           </li>
 
-          <Link to="/cart" className="ml-auto ">
+          <Link to="/cart" className="">
             <ButtonContainer>
               <span className="mr-2" style={{ cursor: "pointer" }}>
                 <i className="fas fa-cart-plus" />
@@ -75,7 +78,7 @@ const Layout = ({ children, match, history }) => {
             </ButtonContainer>
           </Link>
         </Fragment>
-      )}
+      )} */}
 
       {isAuth() && isAuth().role === "subscriber" && (
         <Fragment>
@@ -88,7 +91,7 @@ const Layout = ({ children, match, history }) => {
               Products
             </Link>
           </li>
-
+          <li>
           <Link to="/cart">
             <ButtonContainer>
               <span className="mr-2" style={{ cursor: "pointer" }}>
@@ -100,6 +103,7 @@ const Layout = ({ children, match, history }) => {
               </span>
             </ButtonContainer>
           </Link>
+          </li>
           <li className="nav-item ml-auto">
             <Link
               className="nav-link text-title2"
@@ -124,7 +128,7 @@ const Layout = ({ children, match, history }) => {
       )}
 
       {isAuth() && (
-        <li className="nav-item text-title2 ">
+        <li className="nav-item text-title2">
           <span
             className="nav-link"
             style={{
@@ -145,6 +149,8 @@ const Layout = ({ children, match, history }) => {
         </li>
       )}
     </ul>
+    </nav>
+
   );
   return (
     <Fragment>

@@ -18,8 +18,8 @@ const Private = ({ history }) => {
     const token = getCookie('token');
     
     useEffect(() => {
-        loadProfile();
-    }, []);
+        loadProfile(); 
+    }, []); 
 
 
     const loadProfile = () => {
@@ -29,11 +29,11 @@ const Private = ({ history }) => {
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        })
+        })  
             .then(response => {
                 console.log('PRIVATE PROFILE UPDATE', response);
                 const { role, name, email } = response.data;
-                setValues({ ...values, role, name, email });
+                setValues({ ...values, role , name, email });
             })
             .catch(error => {
                 console.log('PRIVATE PROFILE UPDATE ERROR', error.response.data.error);
@@ -81,19 +81,19 @@ const Private = ({ history }) => {
 
     const updateForm = () => (
         <form>
-            <div className="form-group">
+            {/* <div className="form-group">
                 <label className="text-muted">Role</label>
                 <input defaultValue={role} type="text" className="form-control" disabled />
-            </div>
+            </div> */}
             <div className="form-group">
                 <label className="text-muted">Name</label>
                 <input onChange={handleChange('name')} value={name} type="text" className="form-control" />
             </div>
 
-            <div className="form-group">
+            {/* <div className="form-group">
                 <label className="text-muted">Email</label>
                 <input defaultValue={email} type="email" className="form-control" disabled />
-            </div>
+            </div> */}
 
             <div className="form-group">
                 <label className="text-muted">Password</label>

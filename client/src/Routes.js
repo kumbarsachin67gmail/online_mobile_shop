@@ -37,7 +37,7 @@ const Routes = () =>
 
                         <Route path="/auth/password/forgot" exact component={Forgot} />
                         <Route path="/auth/password/reset/:token" exact component={Reset} />
-                        <Route component={Default}/>
+                        {/* <Route component={Default}/> */}
                     </Switch>
             </BrowserRouter> 
          </ProductProvider>

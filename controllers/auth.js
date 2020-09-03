@@ -132,7 +132,7 @@ exports.accountActivation = (req, res) => {
 };
     
 exports.signin = (req, res) => {
-    const { email, password,cpassword} = req.body;
+    const { email, password} = req.body;
     // check if user exist
     User.findOne({ email }).exec((err, user) => {
         if (err || !user) {
@@ -141,11 +141,11 @@ exports.signin = (req, res) => {
             });
         }
         // authenticate
-        if(password!==cpassword){
-            return res.status(400).json({
-                error:'password cannot match'
-            })
-        }
+        // if(password!==cpassword){
+        //     return res.status(400).json({
+        //         error:'password cannot match'
+        //     })
+        // }
         if (!user.authenticate(password)) {
             return res.status(400).json({
                 error: 'Email and password do not match'
